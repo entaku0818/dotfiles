@@ -43,6 +43,12 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 "閉じ括弧が入力されたとき、対応する括弧を表示する
 set showmatch
 
+"Tab入力時の表示設定
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
 
 "---------------------------
 "" Start Neobundle Settings.
@@ -64,6 +70,11 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 " シンタックスチェック用
 NeoBundle 'scrooloose/syntastic'
+"インテント設定
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+"IDEのようにしてしまうーーー
+NeoBundle 'Shougo/unite.vim'
 
 
 " 今後このあたりに追加のプラグインをどんどん書いて行きます！！"
